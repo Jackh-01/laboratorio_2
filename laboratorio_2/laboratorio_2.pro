@@ -4,4 +4,8 @@ CONFIG -= app_bundle
 CONFIG -= qt
 
 SOURCES += \
+        L2.cpp \
         main.cpp
+
+HEADERS += \
+    L2.h
