@@ -1,4 +1,4 @@
-#include "L2.h"
+#include "problemas.h"
 
 int main()
 {

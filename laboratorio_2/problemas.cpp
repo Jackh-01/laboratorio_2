@@ -1,4 +1,4 @@
-#include "L2.h"
+#include "problemas.h"
 
 bool problema3(char *c1, char *c2){
     bool salida= true;
