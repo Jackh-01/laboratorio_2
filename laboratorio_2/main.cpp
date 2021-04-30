@@ -3,12 +3,22 @@
 int main()
 {
     char c1[]="hola", c2[]="hola";
-    int menu;
+    int menu, A, B;
     bool res;
     cout << "ingrese el programa a realizar: ";
     cin>>menu;
 
     switch (menu) {
+        case 1:{
+        cout <<"Para concer que cantidad de las nomicaciones definidad le entregaria un cajero\n\nIngresar el valor: ";
+        cin >> A;
+        for(B=50000;B>=50;B=B/2){
+            if(B/1000==25 or B/100==25 or B/10==25) B=B-(B/5);
+            A=problema1(B, A);
+        }
+        if(A < B) cout << "Faltante: " << A << endl;
+        break;
+        }
         case 3:{
             res= problema3(&c1[0], c2);
             cout<<res<<endl;        

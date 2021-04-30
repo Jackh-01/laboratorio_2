@@ -75,3 +75,12 @@ int problema10(char *c)
     }
     return total;
 }
+
+int problema1(int valor_moneda, int valor_ingresado, int n_billetes)
+{
+    for (; valor_ingresado >= valor_moneda ; n_billetes += 1){
+            valor_ingresado -= valor_moneda;
+        }
+        cout << valor_moneda << ": " << n_billetes << endl;
+        return valor_ingresado;
+}
