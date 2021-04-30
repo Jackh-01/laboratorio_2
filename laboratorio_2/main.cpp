@@ -14,6 +14,11 @@ int main()
             cout<<res<<endl;        
             break;
             }
+        case 10:{
+            char num[]="DC";
+            cout<<problema10(num)<<endl;
+        break;
+        }
         case 17:{
             int num=284;
             cout<<problema17(num)<<endl;

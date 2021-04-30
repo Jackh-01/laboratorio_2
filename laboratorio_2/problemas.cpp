@@ -48,3 +48,30 @@ int problema17(int num)
     for(;num>1;num--) if(amigable(num)) suma+=num;
     return suma;
 }
+
+
+
+int problema10(char *c)
+{
+    int total=0, valor=0, valor_ant;
+    for(int i=0;c[i]!='\0';i++){
+        valor_ant=valor;
+        switch (c[i]) {
+            case 'N': valor=1000; break;
+            case 'D': valor=500; break;
+            case 'C': valor=100; break;
+            case 'L': valor=50; break;
+            case 'X': valor=10; break;
+            case 'V': valor=5; break;
+            case 'I': valor=1; break;
+            default: valor=-100000; break;
+        }
+        if(i==0) total=valor;
+        else{
+            if(valor_ant>valor) total+=valor;
+            else total-=valor;
+
+        }
+    }
+    return total;
+}
