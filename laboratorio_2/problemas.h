@@ -14,7 +14,7 @@ long long int problema4(char *c);
 void problema5(int num, char *c);
 char * problema6(char *c);
 void problema7(char *c);
-void problema8(char *c1, char *c2);
+void problema8(char *c1);
 long long int problema9(char *c, long long int n);
 int problema10(char *c);
 void problema11(char c, char *c2);
