@@ -1,5 +1,5 @@
 #include "problemas.h"
-
+#include "auxiliar.h"
 bool problema3(char *c1, char *c2){
     bool salida= true;
     if(longitud(c1)!=longitud(c2)) salida=false;
@@ -33,4 +33,11 @@ int problema13(int *mat)
         }
     }
     return estr;
+}
+
+int problema16(int n)
+{
+    int caminos;
+    caminos=recursiva(0,0,n+1,0);
+    return caminos;
 }
