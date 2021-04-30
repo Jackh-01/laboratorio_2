@@ -41,3 +41,10 @@ int problema16(int n)
     caminos=recursiva(0,0,n+1,0);
     return caminos;
 }
+
+int problema17(int num)
+{
+    int suma=0;
+    for(;num>1;num--) if(amigable(num)) suma+=num;
+    return suma;
+}
