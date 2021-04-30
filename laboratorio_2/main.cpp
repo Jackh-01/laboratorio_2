@@ -24,6 +24,20 @@ int main()
             cout<<res<<endl;        
             break;
             }
+
+    case 6:{
+        char cadena[]="Hola!", *salida;
+        salida= problema6(cadena);
+        cout<< salida<< endl;
+        break;
+    }
+
+       case 8: {
+            char cadena[]="abcdefghijk123lmno456pqr789stuvwxyz";
+            problema8(cadena);
+        break;
+    }
+
         case 10:{
             char num[]="DC";
             cout<<problema10(num)<<endl;

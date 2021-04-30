@@ -76,6 +76,7 @@ int problema10(char *c)
     return total;
 }
 
+<<<<<<< HEAD
 int problema1(int valor_moneda, int valor_ingresado, int n_billetes)
 {
     for (; valor_ingresado >= valor_moneda ; n_billetes += 1){
@@ -83,4 +84,33 @@ int problema1(int valor_moneda, int valor_ingresado, int n_billetes)
         }
         cout << valor_moneda << ": " << n_billetes << endl;
         return valor_ingresado;
+=======
+char * problema6(char *c)
+{
+    for (int i=0; *(c+i)!= '\0'; i++){
+        if (*(c+i)>=97 && *(c+i)<=122) *(c+i)-=32;
+    }
+    return c;
+}
+
+void problema8(char *c1)
+{
+    int j=0, k=0;
+    char num[1000], letra[1000];
+    for (int i=0; *(c1+i)!='\0';i++){
+        if(*(c1+i)>=48 && *(c1+i)<=57){
+            num[j]=*(c1+i);
+            j++;
+        }
+        else{
+            letra[k]=*(c1+i);
+            k++;
+        }
+    }
+    num[j]='\0';
+    letra[k]='\0';
+    cout<<"Original: "<<c1<<endl;
+    cout<<"Texto: "<<letra<<'\n'<<"Numeros: "<<num<<endl;
+
+>>>>>>> 0a89ce53369dbd9281ef6b05c294fba3e2c58bcb
 }
