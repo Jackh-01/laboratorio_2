@@ -76,7 +76,7 @@ int problema10(char *c)
     return total;
 }
 
-<<<<<<< HEAD
+
 int problema1(int valor_moneda, int valor_ingresado, int n_billetes)
 {
     for (; valor_ingresado >= valor_moneda ; n_billetes += 1){
@@ -84,7 +84,8 @@ int problema1(int valor_moneda, int valor_ingresado, int n_billetes)
         }
         cout << valor_moneda << ": " << n_billetes << endl;
         return valor_ingresado;
-=======
+}
+
 char * problema6(char *c)
 {
     for (int i=0; *(c+i)!= '\0'; i++){
@@ -111,8 +112,93 @@ void problema8(char *c1)
     letra[k]='\0';
     cout<<"Original: "<<c1<<endl;
     cout<<"Texto: "<<letra<<'\n'<<"Numeros: "<<num<<endl;
+}
 
->>>>>>> 0a89ce53369dbd9281ef6b05c294fba3e2c58bcb
+
+void problema5(int A, char *c)
+{
+    int B, C;
+        C=A;
+        for(B=0;C!=0;B++){
+            C=C/10;
+        }
+        char n_cad[B];
+        n_cad[B]='\0';
+        while (A!=0){
+            n_cad[B-1]=(A%10)+'0';
+            A/=10;
+            B-=1;
+        }
+        cout << n_cad << endl;
+}
+
+
+void problema7(char *c)
+{
+    int A;
+    char *cad = new char[A+1];
+        cad[A]='\0';
+        //fflush(stdin);
+        cout << "Ingrese la cadena: ";
+        cin >> cad;
+        int k=0;
+        char *no_rep = new char[A+1];
+        no_rep[0]='\0';
+        for(int i=0;cad[i]!='\0';i++){
+            for(k=0;no_rep[k]!=cad[i] && no_rep[k]!='\0';k++);
+            if(no_rep[k]=='\0'){
+                no_rep[k]=cad[i];
+                cout << cad[i];
+            }
+        }
+        cout << endl;
+        delete[] no_rep;
+}
+
+long long problema9(char *c, long long n)
+{
+    int E=0,B,A,C;
+        int S=0;
+        int D=0;
+        if (B%A!=0){
+            for (D=0;D<B%A;D++){
+                E=E*10+(C[D]-'0');
+            }
+            S+=E;
+        }
+        while(B>D){
+            E=0;
+            for (int F=A;F>0;F--){
+                E=E*10+(C[D]-'0');
+                D++;
+            }
+            S+=E;
+        }
+        cout << "Original: " << C << endl;
+        cout << "Suma: " << S << endl;
+}
+
+void problema11(char P[15][20])
+{
+    int A;
+        char B;
+
+        cout << "Ingresar la letra de la fila donde se encuentra el asiento (Tiene que ser mayuscula): ";
+        cin >> B;
+        cout << "Ingresar el numero donde se encuentra el asiento: ";
+        cin >> A;
+
+        if (B<65 or B>79) cout << "No ingreso una letra del rango disponible" << endl;
+
+        else if (A<1 or A>20) cout << "No ingreso un numero del rango disponible" << endl;
+
+        else {
+            cout << P[int (B)-65][A] << endl;
+            if (P[int (B)-65][A-1]=='-') P[int (B)-65][A-1]='+';
+            else P[B-65][A-1]='-';
+        }
+
+        return P[15][20];
 }
 
 void problema18(char *p, int n)

@@ -17,7 +17,7 @@ void problema7(char *c);
 void problema8(char *c1);
 long long int problema9(char *c, long long int n);
 int problema10(char *c);
-void problema11(char c, char *c2);
+void problema11(char P[15][20]);
 bool problema12(int *mat, int elementos);
 int problema13(int *mat);
 void problema14();

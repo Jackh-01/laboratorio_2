@@ -2,15 +2,16 @@
 
 int main()
 {
-    char c1[]="hola", c2[]="hola";
-    int menu, A, B;
+    char c1[]="hola", c2[]="hola", c[]="123";
+    char letra, salir, T[15][20];
+    int menu, A, B, i, j;
     bool res;
     cout << "ingrese el programa a realizar: ";
     cin>>menu;
 
     switch (menu) {
         case 1:{
-        cout <<"Para concer que cantidad de las nomicaciones definidad le entregaria un cajero\n\nIngresar el valor: ";
+        cout <<"Para conocer que cantidad de las nomicaciones definida le entregaria un cajero\n\nIngresar el valor: ";
         cin >> A;
         for(B=50000;B>=50;B=B/2){
             if(B/1000==25 or B/100==25 or B/10==25) B=B-(B/5);
@@ -25,24 +26,57 @@ int main()
             break;
             }
 
-    case 6:{
-        char cadena[]="Hola!", *salida;
-        salida= problema6(cadena);
-        cout<< salida<< endl;
-        break;
-    }
+        case 5:{
+        cout << "ingrese un numero entero: ";
+                        cin >> A;
+                   cout<<A;
+                    break;
+                }
+        case 6:{
+            char cadena[]="Hola!", *salida;
+            salida= problema6(cadena);
+            cout<< salida<< endl;
+            break;
+            }
 
+        case 7:{
+            cout << "Ingrese la longitud de la cadena: ";
+            cin >> A;
+            break;
+            }
        case 8: {
             char cadena[]="abcdefghijk123lmno456pqr789stuvwxyz";
             problema8(cadena);
-        break;
-    }
+            break;
+            }
 
         case 10:{
             char num[]="DC";
             cout<<problema10(num)<<endl;
         break;
         }
+    case 11:{
+        for(salir='s';salir!='n';){
+           //Mostrar La tabla
+           letra=65;
+           cout << "\n \n";
+           cout << "   1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 " << endl;
+               for (i=0;i<15;i++){
+                    cout << letra << "  ";
+                    letra+=1;
+                    for (j=0;j<20;j++) cout << T[i][j] << "  ";
+                    cout << endl;
+               }
+                        cout << "ingresar s si quiere cambiar un asiento o n si quiere salir: ";
+                        cin >> salir;
+                        if (salir=='s'){
+                            T[15][20];
+                        }
+
+                        else if (salir!='n') cout << "Debe de poner s o n minusculas" << endl;
+                    }
+                    break;
+                }
         case 17:{
             int num=284;
             cout<<problema17(num)<<endl;
