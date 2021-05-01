@@ -1,5 +1,6 @@
 #include "problemas.h"
 #include "auxiliar.h"
+#include <time.h>
 bool problema3(char *c1, char *c2){
     bool salida= true;
     if(longitud(c1)!=longitud(c2)) salida=false;
@@ -114,7 +115,6 @@ void problema8(char *c1)
     cout<<"Texto: "<<letra<<'\n'<<"Numeros: "<<num<<endl;
 }
 
-
 void problema18(char *p, int n)
 {
     char *t;
@@ -129,33 +129,29 @@ long long int problema4(char *c)
 {
     long long int *resultado= new long long int[10];
     long long int *acumulador;
-    //Ciclo que convierte la cadena de caractere(números) en enteros
     for (int i=0;c[i]!='\0';i++){
         if(c[i]>=48 && c[i]<=57){
             resultado[i] = c[i]-'0';
-            // Hasta aquí genero el arreglo con numeros enteros
         }
         else{
             break;
         }
     }
-    for (int aux=0; c[aux]!='\0' ;aux++){ // Con este for recorro la cadena ya en entero y la
+    for (int aux=0; c[aux]!='\0' ;aux++){
         cout << *(resultado+aux);
     }
     cout << endl;
-   //Ahora llevo el arreglo de enteros a una variable que contenga el resultado en entero
     acumulador = resultado;
-    //cout << &acumulador;
     delete[] resultado;
     return *acumulador;
 }
 void problema5(int num, char *c)
 {
-    int a, A=0;  //longitud
+    int a, A=0;
 
-    if (num<0){  // agregar al str la posicion del menos si el numero es negativo
+    if (num<0){
          c[0]='-';
-         num*=-1; //convertirlo a positivo
+         num*=-1;
          A++;
      }
     a =num;
@@ -163,48 +159,47 @@ void problema5(int num, char *c)
     if (a==0) c[0]='0';
 
     while (a>0) {
-        a/=10;     //division entera para saber cuantos digitos tiene
-        A++;      //crear tamano del str
+        a/=10;
+        A++;
       }
 
-     for (A--;num>0;num/=10,A--){ //ultima posicion
-         c[A]=num%10+'0';  //reconstruir el numero, solo una posicion
+     for (A--;num>0;num/=10,A--){
+         c[A]=num%10+'0';
      }
 
      cout<<c<<endl;
 }
 void problema7(char *c)
-//Escriba un programa que reciba una cadena de caracteres y elimine los caracteres repetidos.
 
 {
     cout<<"Original: "<<c<<endl;
 
-    int contador1=0, contador2=0, contador3=0; //inicializar variables
+    int contador1=0, contador2=0, contador3=0;
     char caracter;
     for (int i=0; *(c+i)!='\0';i++){
-        contador1++; //se calcula la longitus de la cadena
+        contador1++;
     }
 
-    char *auxiliar=new char [contador1]; //asignar memoria para "auxiliar" de igual tamano que la cadena ingresada
+    char *auxiliar=new char [contador1];
 
     for (int j=0; *(c+j)!='\0';j++) {
-        caracter=*(c+j); //almacenar el valor de la cadena en el momento en la variable caracter
+        caracter=*(c+j);
 
         for (int k=0; *(auxiliar+k)!='\0';k++) {
-            if (caracter== *(auxiliar+k))contador2++; //se compara el caracter con lo almacenado en el arreglo "auxiliar"
+            if (caracter== *(auxiliar+k))contador2++;
         }
 
         if (contador2==0){
-            auxiliar[contador3]=caracter; //se agrega el elemento si no esta repetido
+            auxiliar[contador3]=caracter;
             auxiliar[contador3+1]='\0';
             contador3++;
         }
 
-        else contador2=0; //se reinicia el contador si el elemento esta repetido
+        else contador2=0;
         }
 
     cout<<"Sin repetidos: "<< auxiliar<<endl;
-    delete[]auxiliar;// se libera memoria
+    delete[]auxiliar;
 }
 void problema11(char c, char *c2)
 {
@@ -231,4 +226,31 @@ void problema11(char c, char *c2)
     else if (c=='C') cine[fila][columna]='-';
 
     for(int i=0; i<16;i++) cout<< cine[i]<<endl<<endl;
+}
+void problema2()
+{
+    int  aleatorio, Cont_igual=0;
+    char AZ[26]={'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'};
+    char arreglo[200]={};
+    char mayuscula = 'A', acumulador;
+    srand(time(NULL));
+
+
+    for(int j=0;j<200;j++){
+        aleatorio = rand()%26;
+        acumulador = aleatorio + mayuscula;
+        arreglo[j] = acumulador;
+        cout << arreglo[j];
+    }
+    cout << endl;
+    for(int x=0;x<26;x++){
+        cout<<AZ[x]<<": ";
+        Cont_igual=0;
+        for(int z=0;z<200;z++){
+            if(AZ[x]==arreglo[z]){
+                Cont_igual++;
+            }
+        }
+        cout<<Cont_igual<<endl;
+    }
 }

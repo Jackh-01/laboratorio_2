@@ -19,6 +19,10 @@ int main()
         if(A < B) cout << "Faltante: " << A << endl;
         break;
         }
+        case 2:{
+            problema2();
+            break;
+            }
         case 3:{
             res= problema3(&c1[0], c2);
             cout<<res<<endl;        
@@ -69,6 +73,8 @@ int main()
                 cout<<"Ingrese la silla: "; cin>>silla;
                 problema11(reserva,silla);
             break;}
+
+
         case 17:{
             int num=284;
             cout<<problema17(num)<<endl;
