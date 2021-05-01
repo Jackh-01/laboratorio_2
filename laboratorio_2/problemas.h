@@ -6,7 +6,7 @@
 using namespace std;
 
 
-
+int problema1(int valor_moneda, int valor_ingresado, int n_billetes=0);
 void problema2();
 bool problema3(char *c1, char*c2);
 int longitud(char *c);
