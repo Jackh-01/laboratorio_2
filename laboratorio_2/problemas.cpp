@@ -115,92 +115,6 @@ void problema8(char *c1)
 }
 
 
-void problema5(int A, char *c)
-{
-    int B, C;
-        C=A;
-        for(B=0;C!=0;B++){
-            C=C/10;
-        }
-        char n_cad[B];
-        n_cad[B]='\0';
-        while (A!=0){
-            n_cad[B-1]=(A%10)+'0';
-            A/=10;
-            B-=1;
-        }
-        cout << n_cad << endl;
-}
-
-
-void problema7(char *c)
-{
-    int A;
-    char *cad = new char[A+1];
-        cad[A]='\0';
-        //fflush(stdin);
-        cout << "Ingrese la cadena: ";
-        cin >> cad;
-        int k=0;
-        char *no_rep = new char[A+1];
-        no_rep[0]='\0';
-        for(int i=0;cad[i]!='\0';i++){
-            for(k=0;no_rep[k]!=cad[i] && no_rep[k]!='\0';k++);
-            if(no_rep[k]=='\0'){
-                no_rep[k]=cad[i];
-                cout << cad[i];
-            }
-        }
-        cout << endl;
-        delete[] no_rep;
-}
-
-long long problema9(char *c, long long n)
-{
-    int E=0,B,A,C;
-        int S=0;
-        int D=0;
-        if (B%A!=0){
-            for (D=0;D<B%A;D++){
-                E=E*10+(C[D]-'0');
-            }
-            S+=E;
-        }
-        while(B>D){
-            E=0;
-            for (int F=A;F>0;F--){
-                E=E*10+(C[D]-'0');
-                D++;
-            }
-            S+=E;
-        }
-        cout << "Original: " << C << endl;
-        cout << "Suma: " << S << endl;
-}
-
-void problema11(char P[15][20])
-{
-    int A;
-        char B;
-
-        cout << "Ingresar la letra de la fila donde se encuentra el asiento (Tiene que ser mayuscula): ";
-        cin >> B;
-        cout << "Ingresar el numero donde se encuentra el asiento: ";
-        cin >> A;
-
-        if (B<65 or B>79) cout << "No ingreso una letra del rango disponible" << endl;
-
-        else if (A<1 or A>20) cout << "No ingreso un numero del rango disponible" << endl;
-
-        else {
-            cout << P[int (B)-65][A] << endl;
-            if (P[int (B)-65][A-1]=='-') P[int (B)-65][A-1]='+';
-            else P[B-65][A-1]='-';
-        }
-
-        return P[15][20];
-}
-
 void problema18(char *p, int n)
 {
     char *t;
@@ -209,4 +123,112 @@ void problema18(char *p, int n)
         for (int i=0;t[i]!='\0';i++) p[i]=t[i];
 
     }
+}
+
+long long int problema4(char *c)
+{
+    long long int *resultado= new long long int[10];
+    long long int *acumulador;
+    //Ciclo que convierte la cadena de caractere(números) en enteros
+    for (int i=0;c[i]!='\0';i++){
+        if(c[i]>=48 && c[i]<=57){
+            resultado[i] = c[i]-'0';
+            // Hasta aquí genero el arreglo con numeros enteros
+        }
+        else{
+            break;
+        }
+    }
+    for (int aux=0; c[aux]!='\0' ;aux++){ // Con este for recorro la cadena ya en entero y la
+        cout << *(resultado+aux);
+    }
+    cout << endl;
+   //Ahora llevo el arreglo de enteros a una variable que contenga el resultado en entero
+    acumulador = resultado;
+    //cout << &acumulador;
+    delete[] resultado;
+    return *acumulador;
+}
+void problema5(int num, char *c)
+{
+    int a, A=0;  //longitud
+
+    if (num<0){  // agregar al str la posicion del menos si el numero es negativo
+         c[0]='-';
+         num*=-1; //convertirlo a positivo
+         A++;
+     }
+    a =num;
+
+    if (a==0) c[0]='0';
+
+    while (a>0) {
+        a/=10;     //division entera para saber cuantos digitos tiene
+        A++;      //crear tamano del str
+      }
+
+     for (A--;num>0;num/=10,A--){ //ultima posicion
+         c[A]=num%10+'0';  //reconstruir el numero, solo una posicion
+     }
+
+     cout<<c<<endl;
+}
+void problema7(char *c)
+//Escriba un programa que reciba una cadena de caracteres y elimine los caracteres repetidos.
+
+{
+    cout<<"Original: "<<c<<endl;
+
+    int contador1=0, contador2=0, contador3=0; //inicializar variables
+    char caracter;
+    for (int i=0; *(c+i)!='\0';i++){
+        contador1++; //se calcula la longitus de la cadena
+    }
+
+    char *auxiliar=new char [contador1]; //asignar memoria para "auxiliar" de igual tamano que la cadena ingresada
+
+    for (int j=0; *(c+j)!='\0';j++) {
+        caracter=*(c+j); //almacenar el valor de la cadena en el momento en la variable caracter
+
+        for (int k=0; *(auxiliar+k)!='\0';k++) {
+            if (caracter== *(auxiliar+k))contador2++; //se compara el caracter con lo almacenado en el arreglo "auxiliar"
+        }
+
+        if (contador2==0){
+            auxiliar[contador3]=caracter; //se agrega el elemento si no esta repetido
+            auxiliar[contador3+1]='\0';
+            contador3++;
+        }
+
+        else contador2=0; //se reinicia el contador si el elemento esta repetido
+        }
+
+    cout<<"Sin repetidos: "<< auxiliar<<endl;
+    delete[]auxiliar;// se libera memoria
+}
+void problema11(char c, char *c2)
+{
+    static char cine[16][42];
+    int fila,columna;
+    static bool f=false;
+    if (!f){
+        for (int f=0;f<16;f++){
+             for (int c=0;c<42;c++){
+                 if (f==0) cine[f][c]=' ';
+                 else{
+                     if (c==0) cine[f][c]=char(f+64);
+                     else if (c%2==0) cine[f][c]='-';
+                     else cine[f][c]=' ';
+                 }
+                 if (c==41)cine[f][c]='\0';
+             }
+        }
+        f=true;
+    }
+    fila=int (c2[0]-64);
+    columna =2*(int(c2[1])-48);
+    if (c=='I') cine[fila][columna]='+';
+    else if (c=='C') cine[fila][columna]='-';
+
+    for(int i=0; i<16;i++) cout<< cine[i]<<endl<<endl;
 }

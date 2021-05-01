@@ -2,9 +2,8 @@
 
 int main()
 {
-    char c1[]="hola", c2[]="hola", c[]="123";
-    char letra, salir, T[15][20];
-    int menu, A, B, i, j;
+    char c1[]="hola", c2[]="hola";
+    int menu, A, B;
     bool res;
     cout << "ingrese el programa a realizar: ";
     cin>>menu;
@@ -25,26 +24,33 @@ int main()
             cout<<res<<endl;        
             break;
             }
-
-        case 5:{
-        cout << "ingrese un numero entero: ";
-                        cin >> A;
-                   cout<<A;
-                    break;
-                }
+        case 4:{
+            char *cadena = new char[1];
+            cout << "Ingrese una cadena de numeros: "; cin >> cadena;
+            problema4(cadena);
+            delete[] cadena;
+            break;
+            }
         case 6:{
             char cadena[]="Hola!", *salida;
             salida= problema6(cadena);
             cout<< salida<< endl;
             break;
             }
-
+        case 5:{
+            int num;char cadena [10];
+            char *c=cadena;
+            cout << "Ingrese un numero: "; cin >> num;
+            problema5( num, c);
+            break;}
         case 7:{
-            cout << "Ingrese la longitud de la cadena: ";
-            cin >> A;
+            char *c = new char[0];
+            cout << "Ingrese una cadena de caracteres: "; cin >> c;
+            problema7( c);
+            delete[] c;
             break;
             }
-       case 8: {
+        case 8: {
             char cadena[]="abcdefghijk123lmno456pqr789stuvwxyz";
             problema8(cadena);
             break;
@@ -55,28 +61,14 @@ int main()
             cout<<problema10(num)<<endl;
         break;
         }
-    case 11:{
-        for(salir='s';salir!='n';){
-           //Mostrar La tabla
-           letra=65;
-           cout << "\n \n";
-           cout << "   1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 " << endl;
-               for (i=0;i<15;i++){
-                    cout << letra << "  ";
-                    letra+=1;
-                    for (j=0;j<20;j++) cout << T[i][j] << "  ";
-                    cout << endl;
-               }
-                        cout << "ingresar s si quiere cambiar un asiento o n si quiere salir: ";
-                        cin >> salir;
-                        if (salir=='s'){
-                            T[15][20];
-                        }
-
-                        else if (salir!='n') cout << "Debe de poner s o n minusculas" << endl;
-                    }
-                    break;
-                }
+        case 11:{
+            char reserva, silla[3];
+            silla[2]='\0';
+            while (true){
+                cout<<"Ingrese I para ingresar una reserva o ingrese C para cancelar una:  "; cin>>reserva;
+                cout<<"Ingrese la silla: "; cin>>silla;
+                problema11(reserva,silla);
+            break;}
         case 17:{
             int num=284;
             cout<<problema17(num)<<endl;
@@ -103,9 +95,9 @@ int main()
         cout << "La permutacion lexicografica de " << n << " con los numeros del 0 al 9 es "<<permuta<< endl;
 
     }
-    }
 
-
+        }
+}
 
     return 0;
 }
