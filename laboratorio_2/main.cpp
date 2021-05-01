@@ -50,7 +50,17 @@ int main()
             cout<<"el total de estrella es: "<<total<<endl;
             break;
             }
+    case 18:{
+        int n;
+        char permuta[]="0123456789";
+        cout<<"Ingrese el numero de permutacion a escoger: ";
+        cin>> n;
+        problema18(permuta, n);
+        cout << "La permutacion lexicografica de " << n << " con los numeros del 0 al 9 es "<<permuta<< endl;
+
     }
+    }
+
 
 
     return 0;

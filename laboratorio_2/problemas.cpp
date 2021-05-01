@@ -104,3 +104,13 @@ void problema8(char *c1)
     cout<<"Texto: "<<letra<<'\n'<<"Numeros: "<<num<<endl;
 
 }
+
+void problema18(char *p, int n)
+{
+    char *t;
+    if (n>=1 && n<=factorial(10)){
+        t=permutacion(p,n-1,10);
+        for (int i=0;t[i]!='\0';i++) p[i]=t[i];
+
+    }
+}
