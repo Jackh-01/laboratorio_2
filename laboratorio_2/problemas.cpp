@@ -4,7 +4,6 @@
 
 
 
-
 bool problema3(char *c1, char *c2){
     bool salida= true;
     if(longitud(c1)!=longitud(c2)) salida=false;
@@ -173,11 +172,14 @@ void problema5(int num, char *c)
      }
 
      cout<<c<<endl;
+
 }
+
+
 long long problema9(char *c, long long n)
 {
+        int E=0,B,A,C;
 
-    int E=0,B,A,C;
         int S=0;
         int D=0;
         if (B%A!=0){
@@ -189,7 +191,6 @@ long long problema9(char *c, long long n)
         while(B>D){
             E=0;
             for (int F=A;F>0;F--){
-          //      E=E*10+(C[D]-'0');
                 D++;
             }
             S+=E;
@@ -198,7 +199,9 @@ long long problema9(char *c, long long n)
         cout << "Suma: " << S << endl;
 
 }
-void problema7 (char *c)
+
+
+void problema7(char *c)
 
 {
     cout<<"Original: "<<c<<endl;
@@ -217,7 +220,6 @@ void problema7 (char *c)
         for (int k=0; *(auxiliar+k)!='\0';k++) {
             if (caracter== *(auxiliar+k))contador2++;
         }
-
 
         if (contador2==0){
             auxiliar[contador3]=caracter;
@@ -351,8 +353,6 @@ void problema15(int l_A[4], int l_B[4]){
     cout << "}" << endl;
 }
 
-
-
 void problema14()
 {
     int **matriz =  new int*[5];
@@ -368,6 +368,6 @@ void problema14()
     }
 
     delete []matriz;
+    }
 
-}
 

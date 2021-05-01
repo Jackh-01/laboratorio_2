@@ -9,6 +9,11 @@ char * permutacion(char *c,int n, int tam);
 bool amigable(int n);
 
 
+
+void rotar90 (int **matriz);
+void imprimir_matriz (int **matriz);
+
+
 void rotar90 (int **matriz);
 void imprimir_matriz (int **matriz);
 

@@ -7,7 +7,7 @@ int main()
     int l_A[4];
     int l_B[4];
     bool res;
-    cout << "ingrese el problema a realizar: ";
+    cout << "ingrese el programa a realizar: ";
     cin>>menu;
 
     switch (menu) {
@@ -27,7 +27,7 @@ int main()
             }
         case 3:{
             res= problema3(&c1[0], c2);
-            cout<<res<<endl;        
+            cout<<res<<endl;
             break;
             }
         case 4:{
@@ -103,7 +103,6 @@ int main()
             }
 
 
-
     case 14:{
         problema14();
 
@@ -114,11 +113,15 @@ int main()
     }
 
 
+
+
         case 16:{
             int caminos;
             caminos=problema16(2);
             cout<<"el total de caminos es:"<<caminos<<endl;
             break;
+
+
 
             }
         case 15:{
@@ -140,12 +143,14 @@ int main()
             break;
             }
 
+
        }
     case 17:{
         int num=284;
         cout<<problema17(num)<<endl;
         break;
     }
+
 
     case 18:{
         int n;
