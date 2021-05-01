@@ -47,3 +47,24 @@ char * permutacion(char *c, int n, int tam)
     }
     return permuta;
 }
+
+void rotar90(int **matriz)
+{
+    int m[5][5];
+
+    for (int f=0;f<5;f++){
+        for (int c=0;c<5;c++) m[f][c]=matriz[f][c];
+         }
+    for (int f=0;f<5;f++){
+        for (int c=0;c<5;c++) matriz[c][4-f]=m[f][c];
+         }
+}
+
+void imprimir_matriz(int **matriz)
+{
+    for (int f=0;f<5;f++){
+        for (int c=0;c<5;c++) cout<< matriz [f][c]<< '\t';
+        cout << endl<< endl;
+
+    }
+}

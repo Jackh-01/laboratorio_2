@@ -7,7 +7,7 @@ int main()
     int l_A[4];
     int l_B[4];
     bool res;
-    cout << "ingrese el programa a realizar: ";
+    cout << "ingrese el problema a realizar: ";
     cin>>menu;
 
     switch (menu) {
@@ -103,16 +103,36 @@ int main()
             }
 
 
+<<<<<<< Updated upstream
         case 17:{
             int num=284;
             cout<<problema17(num)<<endl;
             break;
         }
+=======
+                        else if (salir!='n') cout << "Debe de poner s o n minusculas" << endl;
+                    }
+                    break;
+                }
+
+
+
+    case 14:{
+        problema14();
+
+
+
+
+        break;
+    }
+
+>>>>>>> Stashed changes
         case 16:{
             int caminos;
             caminos=problema16(2);
             cout<<"el total de caminos es:"<<caminos<<endl;
             break;
+<<<<<<< HEAD
             }
         case 15:{
             cout << "ingrese los valores del rectangulo A en el orden X, Y, Ancho y Altura (uno por uno): " << endl;
@@ -132,6 +152,15 @@ int main()
             cout<<"el total de estrella es: "<<total<<endl;
             break;
             }
+=======
+       }
+    case 17:{
+        int num=284;
+        cout<<problema17(num)<<endl;
+        break;
+    }
+
+>>>>>>> 8e56474ad4e98b8c4fd58af12881a97e1d2dfb9a
     case 18:{
         int n;
         char permuta[]="0123456789";

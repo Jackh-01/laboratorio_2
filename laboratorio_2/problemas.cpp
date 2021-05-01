@@ -1,7 +1,14 @@
 #include "problemas.h"
 #include "auxiliar.h"
+<<<<<<< Updated upstream
 #include <time.h>
+<<<<<<< HEAD
 
+=======
+=======
+
+>>>>>>> Stashed changes
+>>>>>>> 8e56474ad4e98b8c4fd58af12881a97e1d2dfb9a
 bool problema3(char *c1, char *c2){
     bool salida= true;
     if(longitud(c1)!=longitud(c2)) salida=false;
@@ -159,6 +166,7 @@ void problema5(int num, char *c)
 
     if (a==0) c[0]='0';
 
+<<<<<<< Updated upstream
     while (a>0) {
         a/=10;
         A++;
@@ -169,6 +177,29 @@ void problema5(int num, char *c)
      }
 
      cout<<c<<endl;
+=======
+long long problema9(char *c, long long n)
+{
+    int E=0,B,A,C;
+        int S=0;
+        int D=0;
+        if (B%A!=0){
+            for (D=0;D<B%A;D++){
+              //  E=E*10+(C[D]-'0');
+            }
+            S+=E;
+        }
+        while(B>D){
+            E=0;
+            for (int F=A;F>0;F--){
+          //      E=E*10+(C[D]-'0');
+                D++;
+            }
+            S+=E;
+        }
+        cout << "Original: " << C << endl;
+        cout << "Suma: " << S << endl;
+>>>>>>> Stashed changes
 }
 void problema7(char *c)
 
@@ -190,6 +221,7 @@ void problema7(char *c)
             if (caracter== *(auxiliar+k))contador2++;
         }
 
+<<<<<<< Updated upstream
         if (contador2==0){
             auxiliar[contador3]=caracter;
             auxiliar[contador3+1]='\0';
@@ -201,6 +233,9 @@ void problema7(char *c)
 
     cout<<"Sin repetidos: "<< auxiliar<<endl;
     delete[]auxiliar;
+=======
+      //  return P[15][20];
+>>>>>>> Stashed changes
 }
 void problema11(char c, char *c2)
 {
@@ -255,6 +290,7 @@ void problema2()
         cout<<Cont_igual<<endl;
     }
 }
+<<<<<<< HEAD
 void problema15(int l_A[4], int l_B[4]){
 
     int l_C[4];
@@ -318,4 +354,24 @@ void problema15(int l_A[4], int l_B[4]){
     cout << "}" << endl;
 }
 
+=======
+
+void problema14()
+{
+    int **matriz =  new int*[5];
+    for (int i=0;i<5;i++) *(matriz+i)= new int [5];
+
+    for (int f=0;f<5;f++) for (int c=0;c<5;c++) matriz[f][c]=1+c+5*f;
+
+    for (int i=0; i<4;i++){
+       cout<< "Matriz rotada "<<90*i<< " grados" <<endl;
+      imprimir_matriz(matriz);
+       cout<<endl<<endl;
+       rotar90(matriz);
+    }
+
+    delete []matriz;
+
+}
+>>>>>>> 8e56474ad4e98b8c4fd58af12881a97e1d2dfb9a
 
