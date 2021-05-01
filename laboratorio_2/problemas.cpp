@@ -1,6 +1,7 @@
 #include "problemas.h"
 #include "auxiliar.h"
 #include <time.h>
+
 bool problema3(char *c1, char *c2){
     bool salida= true;
     if(longitud(c1)!=longitud(c2)) salida=false;
@@ -254,3 +255,67 @@ void problema2()
         cout<<Cont_igual<<endl;
     }
 }
+void problema15(int l_A[4], int l_B[4]){
+
+    int l_C[4];
+
+        if (l_A[0]<l_B[0]){
+            if (l_B[0]<l_A[0]+l_A[2]){
+                l_C[0]=l_B[0];
+
+                if (l_A[0]+l_A[2]<l_B[0]+l_B[2]) l_C[2]=(l_A[2]+l_A[0])-l_B[0];
+
+                else l_C[2]=l_B[2];
+            }
+
+            else cout << "Esos dos rectangulos no tienen interseccion." << endl;
+        }
+        else{
+            if (l_A[0]<l_B[0]+l_B[2]){
+                l_C[0]=l_A[0];
+
+                if (l_B[0]+l_B[2]<l_A[0]+l_A[2]) l_C[2]=(l_B[2]+l_B[0])-l_A[0];
+
+                else l_C[2]=l_A[2];
+            }
+
+            else cout << "Esos dos rectangulos no tienen interseccion." << endl;
+        }
+
+        if (l_A[1]<l_B[1]){
+            if (l_B[1]-l_B[3]<l_A[1]){
+                l_C[1]=l_A[1];
+
+                if (l_A[1]-l_A[3]<l_B[1]-l_B[3]) l_C[3]=l_A[1]-(l_B[1]-l_B[3]);
+
+                else l_C[3]=l_A[3];
+            }
+
+            else cout << "Esos dos rectangulos no tienen interseccion." << endl;
+        }
+
+        else{
+            if (l_A[1]-l_A[3]<l_B[1]){
+                l_C[1]=l_B[1];
+
+                if (l_B[1]-l_B[3]<l_A[1]-l_A[3]) l_C[3]=l_B[1]-(l_A[1]-l_A[3]);
+
+                else l_C[3]=l_B[3];
+            }
+
+            else cout << "Esos dos rectangulos no tienen interseccion." << endl;
+        }
+
+    //Mostrar nuevo arreglo
+
+    cout <<"\n \n" << "El nuevo arreglo es: {";
+
+    for (int A=0;A<4;A++){
+        cout << l_C[A];
+        if (A<3) cout << ", ";
+    }
+
+    cout << "}" << endl;
+}
+
+

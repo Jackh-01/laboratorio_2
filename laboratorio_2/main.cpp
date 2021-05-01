@@ -4,6 +4,8 @@ int main()
 {
     char c1[]="hola", c2[]="hola";
     int menu, A, B;
+    int l_A[4];
+    int l_B[4];
     bool res;
     cout << "ingrese el programa a realizar: ";
     cin>>menu;
@@ -59,6 +61,9 @@ int main()
             problema8(cadena);
             break;
             }
+        case 9:{
+           break;
+           }
 
         case 10:{
             char num[]="DC";
@@ -73,6 +78,29 @@ int main()
                 cout<<"Ingrese la silla: "; cin>>silla;
                 problema11(reserva,silla);
             break;}
+        case 12:{
+                /*Un cuadro mágico es una matriz, de numeros enteros sin repetir, en la que la suma de los numeros
+                en cada columna, cad fila, y cada diagonal prinsipal, tienen como resultado el mismo constante
+                escriba un progama que permita al usuario ingresar, una matriz cuadrada, imprima la matriz, y verifique si
+                la matriz es cuadrado mágico*/
+                int a,b,c,d,e,f,g,h,i, num=0;
+                cout << "\n\nCuadrado magico 3x3\n\n";
+                cout << "\t _____________\n";
+                cout << "\t | A | B | C |\n";
+                cout << "\t _____________\n";
+                cout << "\t | D | E | F |\n";
+                cout << "\t _____________\n";
+                cout << "\t | G | H | I |\n";
+                cout << "\t _____________\n";
+                cout << "\nIngrese los valores de cada punto: \n\n";
+                cout << "\t | A --> ";cin >> a;cout << "\t | B --> ";cin >> b;cout << "\t | C --> ";cin >> c;cout << "\n\n";
+                cout << "\t | D --> ";cin >> d;cout << "\t | E --> ";cin >> e;cout << "\t | F --> ";cin >> f;cout << "\n\n";
+                cout << "\t | G --> ";cin >> g;cout << "\t | H --> ";cin >> h;cout << "\t | I --> ";cin >> i;cout << "\n\n";
+
+                char *cad_10 = new char [num];
+                cout << "\n\n\nIngrese el numero = "; cin >> cad_10;
+                break;
+            }
 
 
         case 17:{
@@ -85,7 +113,19 @@ int main()
             caminos=problema16(2);
             cout<<"el total de caminos es:"<<caminos<<endl;
             break;
-       }
+            }
+        case 15:{
+            cout << "ingrese los valores del rectangulo A en el orden X, Y, Ancho y Altura (uno por uno): " << endl;
+            for(A=0;A<4;A++){
+            cin >> l_A[A];
+            }
+            cout << "ingrese los valores del rectangulo B en el orden X, Y, Ancho y Altura (uno por uno): " << endl;
+            for(A=0;A<4;A++){
+            cin >> l_B[A];
+            }
+            problema15(l_A, l_B);
+            break;
+            }
        case 13:{
             int total, mat[6][8]={{0,3,4,0,0,0,6,8}, {5,13,6,0,0,0,2,3,}, {2,6,2,7,3,0,10,0}, {0,0,4,15,4,1,6,0}, {0,0,7,12,6,9,10,4}, {5,0,6,10,6,4,8,0,}};
             total=problema13(&mat[0][0]);
