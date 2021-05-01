@@ -2,6 +2,7 @@
 
 int recursiva(int fnodo, int cnodo, int v, int nodos)
 {
+
     bool caminos[2];
     caminos[0]=(cnodo<v-1);
     caminos[1]=(fnodo<v-1);
